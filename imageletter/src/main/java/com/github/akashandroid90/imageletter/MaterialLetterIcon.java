@@ -21,7 +21,6 @@ public class MaterialLetterIcon extends RoundedImageViewWithBorder {
     private final static int DEFAULT_SHAPE = SHAPE_CIRCLE;
     private final static int DEFAULT_LETTER_COLOR = Color.WHITE;
     private final static int DEFAULT_LETTER_SIZE = 26;
-    private final static String DEFAULT_FONT_PATH = "fonts/Roboto-Light.ttf";
     private final static int DEFAULT_LETTERS_NUMBER = 1;
     private final static boolean DEFAULT_INITIALS_STATE = false;
     private final static int DEFAULT_INITIALS_NUMBER = 2;
@@ -103,7 +102,7 @@ public class MaterialLetterIcon extends RoundedImageViewWithBorder {
 
         mLetterPaint = new Paint();
         mLetterPaint.setAntiAlias(true);
-        mLetterPaint.setTypeface(Typeface.createFromAsset(context.getAssets(), DEFAULT_FONT_PATH));
+        mLetterPaint.setTypeface(Typeface.MONOSPACE);
 
         if (!isInEditMode() && attrs != null) {
             initAttributes(context, attrs);
@@ -367,7 +366,7 @@ public class MaterialLetterIcon extends RoundedImageViewWithBorder {
 
         public Builder(Context context) {
             this.context = context;
-            this.mLetterTypeface = Typeface.createFromAsset(context.getAssets(), DEFAULT_FONT_PATH);
+            this.mLetterTypeface = Typeface.MONOSPACE;
         }
 
         public Builder shapeColor(int color) {
