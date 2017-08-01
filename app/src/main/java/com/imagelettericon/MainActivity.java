@@ -163,8 +163,8 @@ public class MainActivity extends AppCompatActivity {
         public SimpleStringRecyclerViewAdapter(Context context, List<String> items, int type) {
             context.getTheme().resolveAttribute(R.attr.selectableItemBackground, mTypedValue, true);
             mMaterialColors = context.getResources().getIntArray(R.array.colors);
-            mImageResource = new int[]{R.drawable.one, R.drawable.two, R.drawable.three, R.drawable.four,
-                    R.drawable.five, R.drawable.six, R.drawable.seven, R.drawable.eight, R.drawable.nine};
+            mImageResource = new int[]{R.drawable.john, R.drawable.ruth, R.drawable.stefan, R.drawable.turtle,
+                    R.drawable.gran, R.drawable.yeats, R.drawable.teacher, R.drawable.mechanic, R.drawable.walter};
             mBackground = mTypedValue.resourceId;
             mValues = items;
             mType = type;

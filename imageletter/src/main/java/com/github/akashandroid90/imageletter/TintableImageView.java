@@ -12,7 +12,9 @@ import android.util.AttributeSet;
 
 
 public class TintableImageView extends AppCompatImageView {
-    private ColorStateList mTint, mBackgroundTint;
+
+    //private ColorStateList mTint;
+    private ColorStateList mBackgroundTint;
 
     public TintableImageView(Context context) {
         super(context);
@@ -25,7 +27,7 @@ public class TintableImageView extends AppCompatImageView {
     public TintableImageView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.TintableImageView, defStyle, 0);
-        mTint = a.getColorStateList(R.styleable.TintableImageView_tint);
+        //mTint = a.getColorStateList(R.styleable.TintableImageView_tint);
         mBackgroundTint = a.getColorStateList(R.styleable.TintableImageView_background_tint);
         a.recycle();
     }
@@ -33,11 +35,11 @@ public class TintableImageView extends AppCompatImageView {
     @Override
     protected void drawableStateChanged() {
         super.drawableStateChanged();
-        if (mTint != null) {
-            if (mTint.isStateful())
-                setColorFilter(mTint.getColorForState(getDrawableState(), 0));
-            else setColorFilter(mTint);
-        }
+        /**if (mTint != null) {
+         if (mTint.isStateful())
+         setColorFilter(mTint.getColorForState(getDrawableState(), 0));
+         else setColorFilter(mTint);
+         }**/
         Drawable drawable = getBackground();
         if (mBackgroundTint != null && drawable != null) {
             Drawable wrap = DrawableCompat.wrap(drawable);
@@ -52,12 +54,12 @@ public class TintableImageView extends AppCompatImageView {
     }
 
     public void removeTint() {
-        mTint = null;
+        //mTint = null;
         clearColorFilter();
     }
 
     public void setColorFilter(ColorStateList tint) {
-        this.mTint = tint;
+        //this.mTint = tint;
         setColorFilter(tint.getColorForState(getDrawableState(), 0));
     }
 }
